@@ -15,10 +15,19 @@ with app.app_context():
 def get_contributions():
     return Contribution.query.all()
 
+# ROUTES
 @app.route("/")
 def index():
     contributions = get_contributions()
     return render_template("index.html", contributions=contributions)
+
+@app.route("/a-propos")
+def about():
+    return render_template("about.html")
+
+@app.route("/nos-prix")
+def pricing():
+    return render_template("pricing.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
