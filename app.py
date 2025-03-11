@@ -1,26 +1,24 @@
 from flask import Flask, render_template
-import sqlite3
+from flask_sqlalchemy import SQLAlchemy
+from models.data import db, Contribution
 
 app = Flask(__name__)
 
-def init_db():
-    connexion = sqlite3.connect("database.db")
-    command = connexion.cursor()
-    command.execute(
-        """
-        CREATE TABLE IF NOT EXISTS contributions 
-        (id INTEGER PRIMARY KEY, city TEXT, solar_panels INTEGER, power REAL, timestamp TEXT)
-        """
-    )
-    connexion.commit()
-    connexion.close()
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
+
+def get_contributions():
+    return Contribution.query.all()
 
 @app.route("/")
 def index():
-    return render_template("index.html")
-
+    contributions = get_contributions()
+    return render_template("index.html", contributions=contributions)
 
 if __name__ == "__main__":
-    init_db()
     app.run(debug=True)
