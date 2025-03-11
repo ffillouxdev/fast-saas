@@ -4,20 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static', filename='/icons/favicon.ico')}}" type="image/x-icon">
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     {% block head %} {% endblock %}
 </head>
 
-<body class="bg-blue-500">
-    <header>
-        Header
+<body class="bg-white">
+    <header class="w-11/12 md:w-1/2 bg-[#F2F2F2] rounded-full mt-4 p-4 mx-auto">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center justify-center">
+                <img class="w-8 h-8" src="{{url_for('static', filename='/icons/logo-fast-saas-icon.png')}}"
+                    alt="logo du site fast-saas">
+                <h2 class="font-bold  ml-2 text-lg">Fast-saas</h2>
+            </div>
+            <nav class="flex space-x-3">
+                <a class="hover:underline font-semibold" href="/about">About</a>
+                <a class="hover:underline font-semibold" href="/pricing">Pricing</a>
+            </nav>
+        </div>
     </header>
-    <main>
+    <main class="min-h-[92vh] rounded-r-full rounded-l-full h-auto flex items-center justify-center flex-col">
 
         {% block body %} {% endblock %}
     </main>
-    <footer>
-        Footer
+    <footer class="bg-black flex font-semibold items-center justify-evenly py-18 text-white">
+        <div class="flex flex-col items-start space-y-2 justify-center">
+            <img class="w-8 h-8" src="{{url_for('static', filename='/icons/logo-fast-saas-icon.png')}}"
+                alt="logo du site fast-saas">
+            <p class="text-white font-thin">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+        <ul class="flex flex-col space-y-2 items-start justify-center">
+            <li>
+                <a class="hover:underline font-semibold" href="/about">About</a>
+            </li>
+            <li>
+                <a class="hover:underline font-semibold" href="/pricing">Pricing</a>
+            </li>
+        </ul>
+        <ul class="flex flex-col space-y-2 items-start justify-center">
+            <li>
+                <a class="hover:underline font-semibold" href="/sales-policy">Politique de vente</a>
+            </li>
+            <li>
+                <a class="hover:underline font-semibold" href="/policy">Politique de confidentialité</a>
+            </li>
+        </ul>
     </footer>
 </body>
 
