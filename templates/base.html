@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{url_for('static', filename='/icons/favicon.ico')}}" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     {% block head %} {% endblock %}
@@ -16,11 +17,11 @@
             <div class="flex items-center justify-center">
                 <img class="w-8 h-8" src="{{url_for('static', filename='/icons/logo-fast-saas-icon.png')}}"
                     alt="logo du site fast-saas">
-                <h2 class="font-bold  ml-2 text-lg">Fast-saas</h2>
+                <a href="/" class="font-bold  ml-2 text-lg">Fast-saas</a>
             </div>
             <nav class="flex space-x-3">
                 <a class="hover:underline font-semibold" href="/a-propos">A propos</a>
-                <a class="hover:underline font-semibold" href="/nos-prix">Prix</a>
+                <a class="hover:underline font-semibold" href="/nos-prix">Nos prix</a>
             </nav>
         </div>
     </header>
@@ -32,7 +33,7 @@
         <div class="flex flex-col items-start space-y-2 justify-center">
             <img class="w-8 h-8" src="{{url_for('static', filename='/icons/logo-fast-saas-icon.png')}}"
                 alt="logo du site fast-saas">
-            <p class="text-white font-thin">Lorem ipsum dolor sit amet consectetur.</p>
+            <p class="text-gray-400 font-thin">"Lorem ipsum dolor sit amet consectetur."</p>
         </div>
         <ul class="flex flex-col space-y-2 items-start justify-center">
             <li>
