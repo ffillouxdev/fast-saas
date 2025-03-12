@@ -1,7 +1,9 @@
 from flask import Flask, render_template
 from models.data import db, Contribution
 from middleware import Middleware
+from dotenv import load_dotenv
 
+load_dotenv()
 app = Flask(__name__)
 
 # app.wsgi_app = Middleware(app.wsgi_app)
