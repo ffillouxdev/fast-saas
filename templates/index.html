@@ -10,11 +10,11 @@
         Corporis similique porro at eos voluptatibus, tenetur ea assumenda molestias qui necessitatibus!</p>
     {% if not current_user.is_authenticated %}
     <div class="flex space-x-3 pt-2">
-        <a href="/service"
+        <a href="{{ url_for('service') }}"
             class="py-2 px-3 rounded-full text-white bg-black transition-transform duration-300 ease-in-out hover:scale-105">
-            Nous rejoindre gratuitement
+            Accès gratuit à la démo
         </a>
-        <a href="/nos-prix"
+        <a href="{{ url_for('pricing') }}"
             class="py-2 px-3 hover:scale-105 rounded-full flex items-center justify-center text-black border-black border bg-white transition-transform duration-300 ease-in-out">
             Voir nos prix
             <i
@@ -22,7 +22,7 @@
         </a>
     </div>
     {% else %}
-    <a href="/service"
+    <a href="{{ url_for('service') }}"
         class="p-4 rounded-full text-white flex items-center bg-black transition-transform duration-300 ease-in-out hover:scale-105 group">
         Accédez à votre espace
         <span class="ml-2 mt-1 block group-hover:hidden">
