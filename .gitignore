@@ -5,3 +5,4 @@ __pycache__/
 /models/__pycache__/
 instance/database.db
 trash.txt
+.env
