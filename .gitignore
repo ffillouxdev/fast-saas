@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 /models/__pycache__/
 instance/database.db
+trash.txt

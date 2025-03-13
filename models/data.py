@@ -1,17 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
 
 db = SQLAlchemy()
 
 
-class Contribution(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    city = db.Column(db.String(100), nullable=False)
-    solar_panels = db.Column(db.Integer, nullable=False)
-    power = db.Column(db.Float, nullable=False)
-    timestamp = db.Column(db.String(100), nullable=False)
-
-    def __init__(self, city, solar_panels, power, timestamp):
-        self.city = city
-        self.solar_panels = solar_panels
-        self.power = power
-        self.timestamp = timestamp
+    email = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(150), nullable=False)
+    # session_token = db.Column(db.string(255), nullable=True)

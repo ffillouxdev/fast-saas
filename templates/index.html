@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block head %}
-<script src="{{url_for('static', filename='js/script.ts')}}"></script>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
 <title>Fast saas</title>
 {% endblock %}
 {% block body %}
@@ -8,6 +8,7 @@
     <h1 class="text-9xl font-semibold font-sans">FAST SaaS</h1>
     <p class="text-gray-400 text-xl max-w-xl font-thin">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
         Corporis similique porro at eos voluptatibus, tenetur ea assumenda molestias qui necessitatibus!</p>
+    {% if not current_user.is_authenticated %}
     <div class="flex space-x-3 pt-2">
         <a href="/service"
             class="py-2 px-3 rounded-full text-white bg-black transition-transform duration-300 ease-in-out hover:scale-105">
@@ -16,11 +17,29 @@
         <a href="/nos-prix"
             class="py-2 px-3 hover:scale-105 rounded-full flex items-center justify-center text-black border-black border bg-white transition-transform duration-300 ease-in-out">
             Voir nos prix
-            <i class="fas fa-arrow-right mt-1 ml-1 hover:translate-x-1 transition-transform duration-300 ease-in-out"></i>
+            <i
+                class="fas fa-arrow-right mt-1 ml-1 hover:translate-x-1 transition-transform duration-300 ease-in-out"></i>
         </a>
     </div>
-    <div class="trusted-company-or-people-container flex space-x-3">
-
+    {% else %}
+    <a href="/service"
+        class="p-4 rounded-full text-white flex items-center bg-black transition-transform duration-300 ease-in-out hover:scale-105 group">
+        Accédez à votre espace
+        <span class="ml-2 mt-1 block group-hover:hidden">
+            <i class="fa-solid fa-face-smile"></i>
+        </span>
+        <span class="ml-2 mt-1 hidden group-hover:block">
+            <i class="fa-solid fa-face-smile-wink"></i>
+        </span>
+    </a>
+    {% endif %}
+    <div class="trusted-company-or-people-container flex flex-col">
+        <h2 class="text-xl mt-4">Ils nous ont fait confiance !</h2>
+        <ul>
+            {% for user in users %}
+            <li>{{ user.email }}</li>
+            {% endfor %}
+        </ul>
     </div>
 </section>
 
