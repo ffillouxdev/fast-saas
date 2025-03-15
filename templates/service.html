@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block head %}
+<script src="{{url_for('static', filename='js/service.js')}}"></script>
+<title>Service</title>
+{% endblock %}
+{% block body %}
+<h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+{% if current_user.is_authenticated %}
+<p>Service page abonnement</p>
+<div
+    x-data="{
+        search: '',
+ 
+        items: ['foo', 'bar', 'baz'],
+ 
+        get filteredItems() {
+            return this.items.filter(
+                i => i.startsWith(this.search)
+            )
+        }
+    }"
+>
+    <input x-model="search" placeholder="Search...">
+ 
+    <ul>
+        <template x-for="item in filteredItems" :key="item">
+            <li x-text="item"></li>
+        </template>
+    </ul>
+</div>
+{% else %}
+<p>Service page</p>
+<div class="flex flex-col items-center mt-3 space-y-3" x-data="{ count: 0 }">
+    <button class="py-2 px-4 text-white bg-red-500 rounded-full" x-on:click="count++">Increment</button>
+    <span x-text="count"></span>
+</div>
+{% endif %}
+{% endblock %}

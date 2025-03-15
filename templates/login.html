@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<script src="{{ url_for('static', filename='js/login.js') }}" defer></script>
+<title>Connexion</title>
+{% endblock %}
+{% block body %}
+<div class="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow">
+    <h1 class="text-2xl mb-4">Connexion</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <p class="text-{{ 'red-500' if category == 'error' else 'green-500' }}">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <input type="email" name="email" placeholder="Email" class="border p-2 w-full mb-2" required>
+        <input type="password" name="password" placeholder="Mot de passe" class="border p-2 w-full mb-2" required>
+        <button type="submit" class="bg-black text-white p-2 w-full">Se connecter</button>
+    </form>
+    <p class="mt-2">Pas de compte ? <a href="{{ url_for('pricing') }}" class="text-blue-500">Vous n'avez pas la bonne offre !</a></p>
+</div>
+{% endblock %}

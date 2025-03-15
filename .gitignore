@@ -1,0 +1,9 @@
+venv/
+database.db
+__pycache__/
+*.pyc
+/models/__pycache__/
+instance/database.db
+trash.txt
+.env
+tailwindcss.exe

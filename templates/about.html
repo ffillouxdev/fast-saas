@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block head %}
+<script src="{{url_for('static', filename='js/about.js')}}"></script>
+<title>A propos</title>
+{% endblock %}
+{% block body %}
+<div
+    class="flex-container-about w-full space-y-5 xs:space-x-5 p-6 xs:p-0 mt-4 xs:mt-0 flex flex-col md:flex-row-reverse items-start justify-center">
+    <img src="{{url_for('static', filename='images/about/about-first-img.jpg')}}"
+        class="md:ml-5 w-full max-w-md h-auto shadow-lg"
+        alt="Image de la page About avec des gens qui ont leurs mains sur les autres">
+
+    <section class="max-w-lg flex flex-col space-y-5">
+        <h1 class="text-2xl font-sans font-bold">A propos de nous</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus sunt esse culpa laboriosam vero
+            praesentium, reprehenderit minima doloremque iste? Enim dignissimos illo libero itaque et magni voluptates,
+            voluptatem at expedita obcaecati minus reiciendis dolores temporibus, laudantium fugit, eos quidem iure.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus sunt esse culpa laboriosam vero
+            praesentium, reprehenderit minima doloremque iste? Enim dignissimos illo libero itaque et magni voluptates,
+            voluptatem at expedita obcaecati minus reiciendis dolores temporibus, laudantium fugit, eos quidem iure.</p>
+        <a href="{{ url_for('service')}}"
+            class="py-2 px-3 rounded-full flex max-w-36 text-white bg-black transition-transform duration-300 ease-in-out hover:scale-105">
+            call-to-action
+            <i
+                class="fas fa-arrow-right mt-1.5 ml-1 hover:translate-x-1 transition-transform duration-300 ease-in-out"></i>
+        </a>
+    </section>
+</div>
+{% endblock %}
