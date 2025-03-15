@@ -143,7 +143,6 @@ def success():
         sub_title_text="Vous devez maintenant vous inscrire pour les prochaines fois où vous utiliserez Fast-SaaS.",
     )
 
-
 @app.route("/connexion", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -170,16 +169,13 @@ def logout():
     flash("Vous avez été déconnecté avec succès.", "success")
     return redirect(url_for("login"))
 
-
 @app.route("/politique-de-confidentialite", methods=["GET"])
 def policy():
     return render_template("policy.html")
 
-
 @app.route("/politique-de-vente", methods=["GET"])
 def sales_policy():
     return render_template("sales-policy.html")
-
 
 if __name__ == "__main__":
     app.run(debug=True)
