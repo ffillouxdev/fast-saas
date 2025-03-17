@@ -5,10 +5,13 @@
 {% endblock %}
 {% block body %}
 <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+<div class="flex items-center">
+    <img class="w-36 h-auto hover:animate-spin duration-6000"
+        src="{{url_for('static', filename='/icons/logo-ThreadsFlow-icon.png')}}" alt="logo du site ThreadsFlow">
+</div>
 {% if current_user.is_authenticated %}
 <p>Service page abonnement</p>
-<div
-    x-data="{
+<div x-data="{
         search: '',
  
         items: ['foo', 'bar', 'baz'],
@@ -18,10 +21,9 @@
                 i => i.startsWith(this.search)
             )
         }
-    }"
->
+    }">
     <input x-model="search" placeholder="Search...">
- 
+
     <ul>
         <template x-for="item in filteredItems" :key="item">
             <li x-text="item"></li>

@@ -56,6 +56,7 @@
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-spin: spin 1s linear infinite;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -253,6 +254,9 @@
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
@@ -267,6 +271,9 @@
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
@@ -324,6 +331,18 @@
   }
   .w-11\/12 {
     width: calc(11/12 * 100%);
+  }
+  .w-26 {
+    width: calc(var(--spacing) * 26);
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
+  .w-36 {
+    width: calc(var(--spacing) * 36);
+  }
+  .w-44 {
+    width: calc(var(--spacing) * 44);
   }
   .w-48 {
     width: calc(var(--spacing) * 48);
@@ -643,10 +662,24 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-transform {
     transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .delay-50 {
+    transition-delay: 50ms;
+  }
+  .delay-100 {
+    transition-delay: 100ms;
+  }
+  .delay-500 {
+    transition-delay: 500ms;
   }
   .duration-150 {
     --tw-duration: 150ms;
@@ -659,6 +692,22 @@
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
+  }
+  .duration-500 {
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+  }
+  .duration-1000 {
+    --tw-duration: 1000ms;
+    transition-duration: 1000ms;
+  }
+  .duration-3000 {
+    --tw-duration: 3000ms;
+    transition-duration: 3000ms;
+  }
+  .duration-6000 {
+    --tw-duration: 6000ms;
+    transition-duration: 6000ms;
   }
   .ease-in {
     --tw-ease: var(--ease-in);
@@ -701,6 +750,20 @@
         --tw-scale-y: 105%;
         --tw-scale-z: 105%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+  }
+  .hover\:rotate-90 {
+    &:hover {
+      @media (hover: hover) {
+        rotate: 90deg;
+      }
+    }
+  }
+  .hover\:animate-spin {
+    &:hover {
+      @media (hover: hover) {
+        animation: var(--animate-spin);
       }
     }
   }
@@ -1040,4 +1103,9 @@
   syntax: "*";
   inherits: false;
   initial-value: 1;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -7,7 +7,7 @@ from flask_login import (
     logout_user,
     current_user,
 )
-from models.data import db, User
+from models.user import db, User, get_number_of_users
 from middleware import Middleware
 from dotenv import load_dotenv
 import secrets
@@ -43,14 +43,6 @@ with app.app_context():
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
-
-def get_number_of_users():
-    return len(User.query.all())
-
-
-def get_users():
-    return User.query.all()
 
 
 PRICING_PLANS = {

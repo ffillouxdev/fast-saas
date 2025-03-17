@@ -1,8 +1,45 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Politique de vente</title>
+<title data-i18n="sales-policy-title">Politique de vente</title>
 {% endblock %}
+
 {% block body %}
-<p>Politique de vente</p>
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded shadow">
+    <h1 class="text-2xl mb-4" data-i18n="sales-policy-heading">Politique de vente</h1>
+    
+    <p data-i18n="sales-policy-paragraph">
+        La présente politique de vente explique les termes et conditions qui s'appliquent lors de l'achat de produits ou de services sur notre site web. 
+        Nous nous engageons à vous offrir une expérience d'achat fluide, transparente et sécurisée.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="sales-policy-section-1">Commandes</h2>
+    <p data-i18n="sales-policy-section-1-description">
+        Lorsque vous passez une commande, vous acceptez les conditions de vente énoncées dans cette politique. Nous nous réservons le droit de refuser toute commande si nous estimons qu'elle viole nos politiques.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="sales-policy-section-2">Prix et paiement</h2>
+    <p data-i18n="sales-policy-section-2-description">
+        Les prix des produits ou services sont affichés en euros et incluent toutes les taxes applicables. Le paiement doit être effectué via les méthodes de paiement proposées sur notre site.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="sales-policy-section-3">Livraison</h2>
+    <p data-i18n="sales-policy-section-3-description">
+        Les produits seront expédiés à l'adresse fournie lors de la commande. Les frais de livraison sont calculés au moment du paiement en fonction de l'adresse de livraison et du poids des articles.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="sales-policy-section-4">Retours et remboursements</h2>
+    <p data-i18n="sales-policy-section-4-description">
+        Si vous n'êtes pas satisfait de votre achat, vous pouvez retourner les produits dans un délai de 30 jours à compter de la réception. Veuillez consulter notre page de retour pour plus de détails.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="sales-policy-section-5">Responsabilité</h2>
+    <p data-i18n="sales-policy-section-5-description">
+        Nous ne pouvons être tenus responsables des pertes ou dommages indirects ou consécutifs résultant de l'utilisation de nos produits ou services.
+    </p>
+
+    <p data-i18n="sales-policy-footer">
+        En achetant sur notre site, vous acceptez cette politique de vente. Nous nous réservons le droit de modifier cette politique à tout moment et vous informerons des changements importants.
+    </p>
+</div>
 {% endblock %}

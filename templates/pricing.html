@@ -2,47 +2,44 @@
 
 {% block head %}
 <script src="{{ url_for('static', filename='js/pricing.js') }}" defer></script>
-<title>Nos prix</title>
+<title data-i18n="pricing">Nos prix</title>
 {% endblock %}
 
 {% block body %}
 <div class="text-center">
-    <h1 class="text-4xl font-bold mb-6">Nos Tarifs</h1>
-    <a class="text-gray-400 font-thin" href="{{ url_for('sales_policy')}}">Notre politique de ventes</a>
+    <h1 class="text-4xl font-bold mb-6" data-i18n="pricing">{{ 'Nos Tarifs' }}</h1>
+    <a class="text-gray-400 font-thin mb-3 underline" href="{{ url_for('sales_policy') }}" data-i18n="sales-policy">Notre politique de ventes</a>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold">Basic</h2>
-            <p class="text-gray-500 h-16">
-                Idéal pour tester le service
-                de publication automatique
-                sur Threads
+            <h2 class="text-2xl font-semibold" data-i18n="basic">Basic</h2>
+            <p class="text-gray-500 h-16" data-i18n="basic-description">
+                Idéal pour tester le service de publication automatique sur Threads
             </p>
             <details class="mt-8">
-                <summary>Détails</summary>
+                <summary data-i18n="details">Détails</summary>
             </details>
             <p class="text-3xl font-bold my-4" id="price-basic">€0</p>
-            <a href="/service-gratuit" class="mt-8 bg-black text-white px-4 py-2 rounded">Choisir</a>
+            <a href="/service-gratuit" class="mt-8 bg-black text-white px-4 py-2 rounded" data-i18n="choose">Choisir</a>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold">Pro</h2>
-            <p class="text-gray-500 h-16">
-                Pour les publications quotidiennes
-                et pour analyser mon référencement
+            <h2 class="text-2xl font-semibold" data-i18n="pro">Pro</h2>
+            <p class="text-gray-500 h-16" data-i18n="pro-description">
+                Pour les publications quotidiennes et pour analyser mon référencement
             </p>
             <details class="mt-8">
-                <summary>Détails</summary>
+                <summary data-i18n="details">Détails</summary>
             </details>
             <p class="text-3xl font-bold my-4" id="price-pro">€29.99</p>
-            <a href="/paiement?type=pro" class="mt-4 bg-black text-white px-4 py-2 rounded">Choisir</a>
+            <a href="/paiement?type=pro" class="mt-4 bg-black text-white px-4 py-2 rounded" data-i18n="choose">Choisir</a>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold">Premium</h2>
-            <p class="text-gray-500 h-16">Pour les TPE / entreprises</p>
+            <h2 class="text-2xl font-semibold" data-i18n="premium">Premium</h2>
+            <p class="text-gray-500 h-16" data-i18n="premium-description">Pour les TPE / entreprises</p>
             <details class="mt-8">
-                <summary>Détails</summary>
+                <summary data-i18n="details">Détails</summary>
             </details>
             <p class="text-3xl font-bold my-4" id="price-premium">€100.00</p>
-            <a <a href="/paiement?type=premium" class="bg-black text-white px-4 py-2 rounded">Choisir</a>
+            <a href="/paiement?type=premium" class="bg-black text-white px-4 py-2 rounded" data-i18n="choose">Choisir</a>
         </div>
     </div>
 </div>

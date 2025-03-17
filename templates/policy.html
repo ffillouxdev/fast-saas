@@ -1,8 +1,46 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Politique de confidentialité</title>
+<title data-i18n="privacy-policy-title">Politique de confidentialité</title>
 {% endblock %}
+
 {% block body %}
-<p>Politique de confidentialité</p>
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded shadow">
+    <h1 class="text-2xl mb-4" data-i18n="privacy-policy-heading">Politique de confidentialité</h1>
+    
+    <p data-i18n="privacy-policy-paragraph">
+        Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données personnelles lorsque vous utilisez notre service. 
+        Nous nous engageons à respecter la confidentialité de vos informations et à les protéger conformément aux lois applicables.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="privacy-policy-section-1">Collecte des informations</h2>
+    <p data-i18n="privacy-policy-section-1-description">
+        Nous collectons des informations personnelles lorsque vous vous inscrivez sur notre site, vous vous connectez, ou vous utilisez certains services.
+        Ces informations peuvent inclure votre nom, votre adresse e-mail, et toute autre donnée que vous fournissez volontairement.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="privacy-policy-section-2">Utilisation des informations</h2>
+    <p data-i18n="privacy-policy-section-2-description">
+        Nous utilisons vos informations personnelles pour fournir nos services, améliorer votre expérience utilisateur, et communiquer avec vous au sujet de nos produits et services.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="privacy-policy-section-3">Protection des informations</h2>
+    <p data-i18n="privacy-policy-section-3-description">
+        Nous mettons en œuvre des mesures de sécurité pour protéger vos informations personnelles contre toute perte, utilisation abusive ou accès non autorisé.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="privacy-policy-section-4">Partage des informations</h2>
+    <p data-i18n="privacy-policy-section-4-description">
+        Nous ne partageons vos informations personnelles avec des tiers que lorsque cela est nécessaire pour la fourniture de nos services ou lorsque la loi l'exige.
+    </p>
+
+    <h2 class="text-xl mt-6" data-i18n="privacy-policy-section-5">Vos droits</h2>
+    <p data-i18n="privacy-policy-section-5-description">
+        Vous avez le droit de demander l'accès à vos informations personnelles, de les corriger ou de demander leur suppression. Pour exercer vos droits, veuillez nous contacter via notre page de contact.
+    </p>
+
+    <p data-i18n="privacy-policy-footer">
+        En utilisant notre service, vous acceptez cette politique de confidentialité. Nous nous réservons le droit de modifier cette politique à tout moment, et nous vous informerons de toute modification importante.
+    </p>
+</div>
 {% endblock %}
