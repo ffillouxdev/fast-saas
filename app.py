@@ -45,6 +45,10 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
+def get_number_of_users():
+    return len(User.query.all())
+
+
 def get_users():
     return User.query.all()
 
@@ -58,7 +62,7 @@ PRICING_PLANS = {
 # ROUTES
 @app.route("/", methods=["GET"])
 def index():
-    users = get_users()
+    users = get_number_of_users()
     return render_template("index.html", users=users)
 
 
@@ -108,7 +112,7 @@ def service():
 @app.route("/succes", methods=["GET", "POST"])
 def success():
     if request.method == "POST":
-        email = request.args.get("email")  # Récupéré depuis l'URL Stripe
+        email = request.args.get("email")
         password = request.form.get("password")
 
         if not email or not password:
@@ -143,6 +147,7 @@ def success():
         sub_title_text="Vous devez maintenant vous inscrire pour les prochaines fois où vous utiliserez Fast-SaaS.",
     )
 
+
 @app.route("/connexion", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -169,13 +174,16 @@ def logout():
     flash("Vous avez été déconnecté avec succès.", "success")
     return redirect(url_for("login"))
 
+
 @app.route("/politique-de-confidentialite", methods=["GET"])
 def policy():
     return render_template("policy.html")
 
+
 @app.route("/politique-de-vente", methods=["GET"])
 def sales_policy():
     return render_template("sales-policy.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

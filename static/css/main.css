@@ -1,1 +1,22 @@
-@import "tailwindcss";
+.custom-select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.custom-select option {
+    padding-left: 30px;
+    position: relative;
+}
+
+.custom-select option[class^="flag-icon"] {
+    padding-left: 35px;
+}
+
+.custom-select option[class^="flag-icon"]:before {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
